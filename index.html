@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="images/icons/star.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>Windbnb</title>
+</head>
+
+<body class="bg-gray-100">
+  <header class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+    <img src="./images/icons/logo-f7862584.svg" alt="Logowindbnb" class="w-32">
+
+    <div id="openModal" class="flex shadow-lg rounded-xl overflow-hidden cursor-pointer bg-white">
+      <div id="selectedLocation" class="px-4 py-2 border-r text-gray-600">Add location</div>
+      <div id="selectedGuests" class="px-4 py-2 border-r text-gray-400">
+        Add guests
+      </div>
+      <div class="px-4 py-2">
+        <img src="./images/icons/search.svg" alt="search" class="w-4">
+      </div>
+    </div>
+
+  </header>
+
+  <div class="max-w-6xl mx-auto flex justify-between p-6">
+    <h2 class="text-xl font-semibold">Stays</h2>
+    <span id="staysCount" class="text-gray-500"></span>
+  </div>
+
+  <div id="staysContainer" class="max-w-6xl mx-auto grid gap-6 p-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  </div>
+
+
+  <div id="modal" class="fixed top-0 left-0 w-full bg-white p-10 hidden z-50 shadow-xl transition-all duration-300">
+    <div class="max-w-6xl mx-auto p-6">
+      <div class="flex justify-between items-center mb-6">
+        <div class="font-semibold">Edit your search</div>
+        <button id="closeModal" class="text-xl font-bold cursor-pointer">X</button>
+      </div>
+
+      <div class=" grid md:grid-cols-3 shadow-lg rounded-xl overflow-hidden bg-white">
+        <div class="border-r p-4">
+          <label for="locationInput" class="text-xs font-bold">Location</label>
+          <input type="text" id="locationInput" placeholder="Add location" class="w-full outline-none">
+          <div id="citiesList" class="mt-2"></div>
+        </div>
+
+        <div class="border-r p-4">
+          <label class="text-xs font-bold">Guests</label>
+          <div class="flex items-center gap-4 mt-2">
+            <button id="minusGuests" class="border px-3 rounded">-</button>
+            <span id="guestNumber" class="border px-3 rounded">0</span>
+            <button id="plusGuests" class="border px-3 rounded">+</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <button id="searchBtn" class="bg-red-500 text-white px-6 py-3 rounded-lg flex items-center gap-2">
+            <img src="./images/icons/search.svg" class="w-4" alt="search">Search
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>
